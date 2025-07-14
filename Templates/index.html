@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo"><span>Portfolio</span></div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contacts</a></li>
+    </ul>
+    <div class="social-icons">
+      <!-- Add SVG icons or images for Instagram, GitHub, LinkedIn -->
+    </div>
+  </nav>
+  <br>
+  <br>
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Hi, I'm Harsh Tiwari,</h2>
+      <h1>I’M A DATA SCIENTIST</h1>
+      <p class="desc">Turning complex data into clear insights, and building smart solutions with code.
+Currently pursuing B.Tech in CSE with a focus on Data Science. Passionate about AI, ML, and full-stack development. Always curious. Always creating.</p>
+      <br><br><a href="/projects" class="btn">Resume</a>
+    </div>
+    <div class="hero-image">
+      <img src="{{ url_for('static', filename='images/2.jpg') }}" alt="Avatar">
+    </div>
+  </section>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
