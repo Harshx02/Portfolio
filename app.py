@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify, request
 
 # Set correct paths for Flask to locate templates and static folders
-app = Flask(__name__, template_folder="../templates", static_folder="../static")
+app = Flask(__name__, template_folder="templates", static_folder="static")
 
 # Home route
 @app.route('/')
@@ -41,9 +41,6 @@ def handle_contact():
     except Exception as e:
         print(f"Error handling contact form: {e}")
         return jsonify({"status": "error", "message": "Internal server error"}), 500
-
-# Required for Vercel serverless function
-handler = app
 
 # Optional: only runs when testing locally
 if __name__ == '__main__':
