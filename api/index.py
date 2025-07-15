@@ -1,5 +1,21 @@
+# from flask import Flask, render_template
+# app = Flask(__name__)
+
+
+
 from flask import Flask, render_template
-app = Flask(__name__)
+
+app = Flask(__name__, template_folder="../Templates", static_folder="../static")
+
+@app.route('/')
+def home():
+    return render_template("index.html")
+
+# Required by Vercel to treat this as a serverless function
+handler = app
+
+
+
 
 @app.route('/')
 def home():
@@ -56,3 +72,4 @@ def handle_contact():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
+
