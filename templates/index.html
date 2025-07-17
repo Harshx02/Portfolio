@@ -25,6 +25,7 @@
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
                     <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#certifications" class="nav-link">Certifications</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
                 
@@ -56,6 +57,7 @@
                 <a href="#about" class="block py-2 text-white hover:text-gray-300">About</a>
                 <a href="#projects" class="block py-2 text-white hover:text-gray-300">Projects</a>
                 <a href="#skills" class="block py-2 text-white hover:text-gray-300">Skills</a>
+                <a href="#certifications" class="block py-2 text-white hover:text-gray-300">Certifications</a>
                 <a href="#contact" class="block py-2 text-white hover:text-gray-300">Contact</a>
             </div>
         </div>
@@ -94,10 +96,10 @@
                 
                 <div class="hero-image-container animate-slide-in-right">
                     <div class="relative">
-                        <div class="profile-image-wrapper">
+                        <div class="profile-image-wrapper animate-float">
                             <img src="{{ url_for('static', filename='images/1.jpg') }}" 
                                  alt="Harsh Tiwari - Data Scientist" 
-                                 class="profile-image">
+                                 class="profile-image animate-glow">
                             <div class="profile-overlay"></div>
                         </div>
                         <div class="floating-elements">
@@ -197,21 +199,21 @@
                         <div class="skill-item">
                             <div class="flex justify-between mb-2">
                                 <span>Python</span>
-                                <span>80%</span>
+                                <span class="skill-percentage" data-target="80">0%</span>
                             </div>
                             <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="flex justify-between mb-2">
                                 <span>Machine Learning</span>
-                                <span>35%</span>
+                                <span class="skill-percentage" data-target="35">0%</span>
                             </div>
                             <div class="skill-bar"><div class="skill-progress" data-width="35"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="flex justify-between mb-2">
                                 <span>Data Analysis</span>
-                                <span>88%</span>
+                                <span class="skill-percentage" data-target="88">0%</span>
                             </div>
                             <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
                         </div>
@@ -224,21 +226,21 @@
                         <div class="skill-item">
                             <div class="flex justify-between mb-2">
                                 <span>JavaScript</span>
-                                <span>80%</span>
+                                <span class="skill-percentage" data-target="80">0%</span>
                             </div>
                             <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="flex justify-between mb-2">
                                 <span>React</span>
-                                <span>35%</span>
+                                <span class="skill-percentage" data-target="35">0%</span>
                             </div>
                             <div class="skill-bar"><div class="skill-progress" data-width="35"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="flex justify-between mb-2">
                                 <span>HTML/CSS</span>
-                                <span>90%</span>
+                                <span class="skill-percentage" data-target="90">0%</span>
                             </div>
                             <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
                         </div>
@@ -251,23 +253,173 @@
                         <div class="skill-item">
                             <div class="flex justify-between mb-2">
                                 <span>Flask</span>
-                                <span>85%</span>
+                                <span class="skill-percentage" data-target="85">0%</span>
                             </div>
                             <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="flex justify-between mb-2">
                                 <span>SQL</span>
-                                <span>80%</span>
+                                <span class="skill-percentage" data-target="80">0%</span>
                             </div>
                             <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="flex justify-between mb-2">
                                 <span>APIs</span>
-                                <span>55%</span>
+                                <span class="skill-percentage" data-target="55">0%</span>
                             </div>
                             <div class="skill-bar"><div class="skill-progress" data-width="55"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Certifications & Achievements</h2>
+                <p class="section-subtitle">Professional certifications and achievements</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="certification-card animate-fade-in-up" data-delay="100">
+                    <div class="certification-icon">
+                        <i class="fas fa-certificate text-4xl text-blue-400"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3 class="text-xl font-semibold mb-2">Python Programming</h3>
+                        <p class="text-gray-400 mb-3">Advanced Python Programming Certificate</p>
+                        <div class="certification-meta">
+                            <span class="certification-issuer">
+                                <i class="fas fa-university mr-2"></i>Coursera
+                            </span>
+                            <span class="certification-date">
+                                <i class="fas fa-calendar mr-2"></i>2024
+                            </span>
+                        </div>
+                        <div class="certification-badge">
+                            <span class="badge-verified">
+                                <i class="fas fa-check-circle mr-1"></i>Verified
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card animate-fade-in-up" data-delay="200">
+                    <div class="certification-icon">
+                        <i class="fas fa-brain text-4xl text-green-400"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3 class="text-xl font-semibold mb-2">Machine Learning</h3>
+                        <p class="text-gray-400 mb-3">Machine Learning Specialization</p>
+                        <div class="certification-meta">
+                            <span class="certification-issuer">
+                                <i class="fas fa-university mr-2"></i>Stanford Online
+                            </span>
+                            <span class="certification-date">
+                                <i class="fas fa-calendar mr-2"></i>2024
+                            </span>
+                        </div>
+                        <div class="certification-badge">
+                            <span class="badge-verified">
+                                <i class="fas fa-check-circle mr-1"></i>Verified
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card animate-fade-in-up" data-delay="300">
+                    <div class="certification-icon">
+                        <i class="fas fa-chart-line text-4xl text-purple-400"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3 class="text-xl font-semibold mb-2">Data Analysis</h3>
+                        <p class="text-gray-400 mb-3">Advanced Data Analysis with R</p>
+                        <div class="certification-meta">
+                            <span class="certification-issuer">
+                                <i class="fas fa-university mr-2"></i>Johns Hopkins
+                            </span>
+                            <span class="certification-date">
+                                <i class="fas fa-calendar mr-2"></i>2023
+                            </span>
+                        </div>
+                        <div class="certification-badge">
+                            <span class="badge-verified">
+                                <i class="fas fa-check-circle mr-1"></i>Verified
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card animate-fade-in-up" data-delay="400">
+                    <div class="certification-icon">
+                        <i class="fab fa-react text-4xl text-cyan-400"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3 class="text-xl font-semibold mb-2">Full Stack Development</h3>
+                        <p class="text-gray-400 mb-3">Modern Web Development</p>
+                        <div class="certification-meta">
+                            <span class="certification-issuer">
+                                <i class="fas fa-university mr-2"></i>FreeCodeCamp
+                            </span>
+                            <span class="certification-date">
+                                <i class="fas fa-calendar mr-2"></i>2023
+                            </span>
+                        </div>
+                        <div class="certification-badge">
+                            <span class="badge-verified">
+                                <i class="fas fa-check-circle mr-1"></i>Verified
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card animate-fade-in-up" data-delay="500">
+                    <div class="certification-icon">
+                        <i class="fas fa-database text-4xl text-orange-400"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3 class="text-xl font-semibold mb-2">SQL & Databases</h3>
+                        <p class="text-gray-400 mb-3">Advanced SQL for Data Science</p>
+                        <div class="certification-meta">
+                            <span class="certification-issuer">
+                                <i class="fas fa-university mr-2"></i>IBM
+                            </span>
+                            <span class="certification-date">
+                                <i class="fas fa-calendar mr-2"></i>2023
+                            </span>
+                        </div>
+                        <div class="certification-badge">
+                            <span class="badge-verified">
+                                <i class="fas fa-check-circle mr-1"></i>Verified
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card animate-fade-in-up" data-delay="600">
+                    <div class="certification-icon">
+                        <i class="fas fa-trophy text-4xl text-yellow-400"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3 class="text-xl font-semibold mb-2">Academic Excellence</h3>
+                        <p class="text-gray-400 mb-3">Dean's List Recognition</p>
+                        <div class="certification-meta">
+                            <span class="certification-issuer">
+                                <i class="fas fa-university mr-2"></i>University
+                            </span>
+                            <span class="certification-date">
+                                <i class="fas fa-calendar mr-2"></i>2023-2024
+                            </span>
+                        </div>
+                        <div class="certification-badge">
+                            <span class="badge-achievement">
+                                <i class="fas fa-star mr-1"></i>Achievement
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -457,6 +609,6 @@ enhanced readability.
     </footer>
 
     <!-- Scripts -->
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
 </body>
 </html>

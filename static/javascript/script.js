@@ -478,3 +478,244 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Enhanced Animations and Certifications
+function initEnhancedAnimations() {
+    // Initialize certification cards animations
+    initCertificationAnimations();
+    
+    // Initialize enhanced scroll animations
+    initEnhancedScrollAnimations();
+    
+    // Initialize particle background
+    initParticleBackground();
+    
+    // Initialize enhanced skill bars
+    initEnhancedSkillBars();
+}
+
+// Certification Cards Animations
+function initCertificationAnimations() {
+    const certificationCards = document.querySelectorAll('.certification-card');
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const card = entry.target;
+                const delay = card.getAttribute('data-delay') || 0;
+                
+                setTimeout(() => {
+                    card.classList.add('visible');
+                    
+                    // Add a subtle bounce effect
+                    card.style.animation = `fadeInUp 0.8s ease forwards, bounceIn 0.6s ease ${delay / 1000}s forwards`;
+                }, delay);
+                
+                observer.unobserve(card);
+            }
+        });
+    }, observerOptions);
+    
+    certificationCards.forEach(card => {
+        card.classList.add('animate-fade-in-up');
+        observer.observe(card);
+    });
+}
+
+// Enhanced Scroll Animations
+function initEnhancedScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.animate-fade-in-up, .skill-category, .project-card');
+    
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+                
+                // Add visible class for fade-in animations
+                element.classList.add('visible');
+                
+                // Special animations for different elements
+                if (element.classList.contains('skill-category')) {
+                    animateSkillBars(element);
+                    element.style.animation = 'scaleIn 0.6s ease forwards';
+                }
+                
+                if (element.classList.contains('project-card')) {
+                    element.style.animation = 'slideInLeft 0.8s ease forwards';
+                }
+                
+                observer.unobserve(element);
+            }
+        });
+    }, observerOptions);
+    
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+}
+
+// Enhanced Skill Bars with Progress Animation
+function initEnhancedSkillBars() {
+    const skillCategories = document.querySelectorAll('.skill-category');
+    
+    skillCategories.forEach(category => {
+        const skillBars = category.querySelectorAll('.skill-progress');
+        
+        skillBars.forEach((bar, index) => {
+            // Add a loading animation class
+            bar.classList.add('skill-loading');
+            
+            // Create progress number animation
+            const parentSkillItem = bar.closest('.skill-item');
+            const percentageSpan = parentSkillItem.querySelector('.skill-percentage');
+            
+            if (percentageSpan) {
+                const targetPercentage = parseInt(percentageSpan.getAttribute('data-target'));
+                
+                // Animate the percentage number
+                const animatePercentage = (element, target) => {
+                    let current = 0;
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        element.textContent = Math.round(current) + '%';
+                    }, 16);
+                };
+                
+                // Start percentage animation when bar becomes visible
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                animatePercentage(percentageSpan, targetPercentage);
+                            }, index * 200);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                
+                observer.observe(bar);
+            }
+        });
+    });
+}
+
+// Particle Background Effect
+function initParticleBackground() {
+    const canvas = document.createElement('canvas');
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '-1';
+    canvas.style.opacity = '0.3';
+    
+    document.body.appendChild(canvas);
+    
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    
+    function createParticle() {
+        return {
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            dx: (Math.random() - 0.5) * 0.5,
+            dy: (Math.random() - 0.5) * 0.5,
+            size: Math.random() * 2 + 1,
+            opacity: Math.random() * 0.5 + 0.2
+        };
+    }
+    
+    function initParticles() {
+        particles = [];
+        const particleCount = Math.min(50, Math.floor(canvas.width * canvas.height / 10000));
+        
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(createParticle());
+        }
+    }
+    
+    function updateParticles() {
+        particles.forEach(particle => {
+            particle.x += particle.dx;
+            particle.y += particle.dy;
+            
+            if (particle.x < 0 || particle.x > canvas.width) particle.dx *= -1;
+            if (particle.y < 0 || particle.y > canvas.height) particle.dy *= -1;
+        });
+    }
+    
+    function drawParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        particles.forEach(particle => {
+            ctx.beginPath();
+            ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${particle.opacity})`;
+            ctx.fill();
+        });
+        
+        // Draw connections
+        particles.forEach((particle, i) => {
+            particles.slice(i + 1).forEach(otherParticle => {
+                const distance = Math.sqrt(
+                    Math.pow(particle.x - otherParticle.x, 2) +
+                    Math.pow(particle.y - otherParticle.y, 2)
+                );
+                
+                if (distance < 100) {
+                    ctx.beginPath();
+                    ctx.moveTo(particle.x, particle.y);
+                    ctx.lineTo(otherParticle.x, otherParticle.y);
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 * (1 - distance / 100)})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.stroke();
+                }
+            });
+        });
+    }
+    
+    function animate() {
+        updateParticles();
+        drawParticles();
+        requestAnimationFrame(animate);
+    }
+    
+    window.addEventListener('resize', () => {
+        resizeCanvas();
+        initParticles();
+    });
+    
+    resizeCanvas();
+    initParticles();
+    animate();
+}
+
+// Initialize enhanced animations when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Add to existing initialization
+    initEnhancedAnimations();
+});
