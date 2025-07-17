@@ -1,7 +1,3 @@
-diff --git a/templates/index.html b/templates/index.html
- a/templates/index.html
- b/templates/index.html
-@@ -1,462 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,470 +23,8 @@ diff --git a/templates/index.html b/templates/index.html
                 <ul class="hidden md:flex space-x-8">
                     <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
                     <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                
-                <div class="flex items-center space-x-4">
-                    <div class="social-icons flex space-x-3">
-                        <a href="https://github.com/Harshx02" class="social-icon" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/harsh-tiwari-a77962252/" class="social-icon" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://x.com/__HarshTiwari__" class="social-icon" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                    
-                    <!-- Mobile menu button -->
-                    <button class="md:hidden text-white" id="mobile-menu-btn">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile menu -->
-        <div class="md:hidden bg-black/95 backdrop-blur-sm hidden" id="mobile-menu">
-            <div class="px-4 py-4 space-y-2">
-                <a href="#home" class="block py-2 text-white hover:text-gray-300">Home</a>
-                <a href="#about" class="block py-2 text-white hover:text-gray-300">About</a>
-                <a href="#projects" class="block py-2 text-white hover:text-gray-300">Projects</a>
-                <a href="#skills" class="block py-2 text-white hover:text-gray-300">Skills</a>
-                <a href="#contact" class="block py-2 text-white hover:text-gray-300">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="hero-text space-y-6 animate-slide-in-left">
-                    <div class="typing-container">
-                        <h2 class="text-xl md:text-2xl text-gray-300 mb-2">Hi, I'm</h2>
-                        <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                            <span class="gradient-text">Harsh Tiwari</span>
-                        </h1>
-                        <div class="text-2xl md:text-4xl font-semibold mb-6">
-                            <span class="typing-text" data-words='["DATA SCIENTIST", "ML ENGINEER", "PYTHON FULL STACK DEVELOPER", "AI ENTHUSIAST"]'></span>
-                        </div>
-                    </div>
-                    
-                    <p class="text-lg text-gray-400 leading-relaxed max-w-2xl">
-                        Turning complex data into clear insights, and building smart solutions with code. 
-                        Currently pursuing B.Tech in CSE with a focus on Data Science. Passionate about AI, ML, and full-stack development. 
-                        <span class="text-white font-semibold">Always curious. Always creating.</span>
-                    </p>
-                    
-                    <div class="flex flex-wrap gap-4 pt-4">
-                        <a href="https://github.com/Harshx02?tab=repositories" class="btn-primary">
-                            <i class="fas fa-code mr-2"></i>View Projects
-                        </a>
-                        <a href="https://drive.google.com/file/d/12Y9V7CAIktPjwfcjvYzvMj3_bU4M9QyM/view?usp=sharing" class="btn-secondary">
-                            <i class="fas fa-download mr-2"></i>Download Resume
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="hero-image-container animate-slide-in-right">
-                    <div class="relative">
-                        <div class="profile-image-wrapper">
-                            <img src="{{ url_for('static', filename='images/1.jpg') }}" 
-                                 alt="Harsh Tiwari - Data Scientist" 
-                                 class="profile-image">
-                            <div class="profile-overlay"></div>
-                        </div>
-                        <div class="floating-elements">
-                            <div class="floating-element" style="top: 10%; left: 10%;">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <div class="floating-element" style="top: 20%; right: 10%;">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="floating-element" style="bottom: 30%; left: 5%;">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="floating-element" style="bottom: 10%; right: 5%;">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Get to know me better</p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6 animate-fade-in">
-                    <h3 class="text-3xl font-bold mb-6">Passionate About Data & Innovation</h3>
-                    <div class="space-y-4 text-gray-300">
-                        <p>
-                            I'm a dedicated Computer Science student specializing in Data Science, with a deep passion for 
-                            transforming raw data into meaningful insights that drive decision-making.
-                        </p>
-                        <p>
-                            My journey in technology spans across multiple domains including Machine Learning, 
-                            Artificial Intelligence, and Full-Stack Development. I believe in the power of code 
-                            to solve real-world problems and create positive impact.
-                        </p>
-                        <p>
-                            When I'm not coding, you can find me exploring new technologies, contributing to open-source 
-                            projects, or learning about the latest trends in AI and data science.
-                        </p>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 gap-6 pt-6">
-                        <div class="stat-card">
-                            <div class="text-3xl font-bold text-white counter" data-count="50">4</div>
-                            <div class="text-gray-400">Projects Completed</div>
-                        </div>
-    
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-2 gap-4 animate-fade-in">
-                    <div class="experience-card">
-                        <i class="fas fa-graduation-cap text-3xl mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2">Education</h4>
-                        <p class="text-gray-400">B.Tech in Computer Science Engineering with specialization in Data Science</p>
-                    </div>
-                    <div class="experience-card">
-                        <i class="fas fa-code text-3xl mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2">Development</h4>
-                        <p class="text-gray-400">Full-stack development with modern frameworks and technologies</p>
-                    </div>
-                    <div class="experience-card">
-                        <i class="fas fa-brain text-3xl mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2">Machine Learning</h4>
-                        <p class="text-gray-400">Building intelligent systems and predictive models</p>
-                    </div>
-                    <div class="experience-card">
-                        <i class="fas fa-chart-line text-3xl mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2">Data Analysis</h4>
-                        <p class="text-gray-400">Extracting insights from complex datasets</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="section-title">Skills & Technologies</h2>
-                <p class="section-subtitle">Technologies I work with</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="skill-category">
-                    <h3 class="text-xl font-semibold mb-6 text-center">Data Science</h3>
-                    <div class="space-y-4">
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span>Python</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span>Machine Learning</span>
-                                <span>35%</span>
-                            </div>
-                            <div class="skill-bar"><div class="skill-progress" data-width="35"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span>Data Analysis</span>
-                                <span>88%</span>
-                            </div>
-                            <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3 class="text-xl font-semibold mb-6 text-center">Frontend</h3>
-                    <div class="space-y-4">
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span>JavaScript</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span>React</span>
-                                <span>35%</span>
-                            </div>
-                            <div class="skill-bar"><div class="skill-progress" data-width="35"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span>HTML/CSS</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3 class="text-xl font-semibold mb-6 text-center">Backend</h3>
-                    <div class="space-y-4">
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span>Flask</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span>SQL</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span>APIs</span>
-                                <span>55%</span>
-                            </div>
-                            <div class="skill-bar"><div class="skill-progress" data-width="55"></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Some of my recent work</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="{{ url_for('static', filename='images/mlproject.jpg') }}">
-                    </div>
-                    <br>
-                    <div class="project-content">
-                        <h3 class="text-xl font-semibold mb-3">Diabetes Dataset Analysis Using Cutting-Edge ML Models</h3>
-                        <p class="text-gray-400 mb-4">
-                                                  • Developed and implemented advanced machine learning models to analyze the diabetes dataset
-beyond exploratory analysis.
-• Engineered and optimized predictive models in R, including KNN, Decision Trees, SVM, ANN, and
-Random Forest, to enhance accuracy and performance.
-• Conducted comparative evaluations to identify the most effective model, leveraging data-driven
-insights for improved healthcare decision-making.
-  
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">R</span>
-                            <span class="tag">Machine Learning Models</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.linkedin.com/posts/harshh-tiwari_health-metrics-insights-diabetes-dataset-activity-7264249703293169664-e3AK?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD5vBXsB2XVH_aUaGzcCWXzb1gBy4X_GmQk" class="project-link">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://github.com/Harshx02?tab=repositories" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="{{ url_for('static', filename='images/tableauDashboard.png') }}">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="text-xl font-semibold mb-3">Data Science Job Salaries Dashboard</h3>
-                        <p class="text-gray-400 mb-4">
-                            • Designed and developed an interactive Tableau dashboard to visualize salary trends across various
-roles in the data science domain, including Data Analysts, Data Scientists, and Business Analysts.
-• Implemented salary segmentation based on experience levels (Entry-Level, Intermediate, and
-Senior) to provide clearer insights.
-• Utilized Tableau Prep for data cleaning,transformation, and formatting, ensuring accurate and
-structured data representation.
-
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Tableau</span>
-                            <span class="tag">Tableau Prep</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.linkedin.com/posts/harshh-tiwari_datascience-tableau-salaryinsights-activity-7263679131215683584-lWP5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD5vBXsB2XVH_aUaGzcCWXzb1gBy4X_GmQk" class="project-link">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://github.com/Harshx02?tab=repositories" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="{{ url_for('static', filename='images/qrImage.jpg') }}">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="text-xl font-semibold mb-3">QR-Code Generator</h3>
-                        <p class="text-gray-400 mb-4">
-                            • Built a Python tool to generate QR codes from user-provided URLs using the qrcode library.
-• Configured QR attributes such as error correction, box size, and custom color themes for
-enhanced readability.
-• Exported codes as high-quality .png images for seamless digital sharing and practical usage.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Qrcode</span>
-                            <span class="tag">Pillow</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="https://github.com/Harshx02/QrCodeGenerator" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="https://github.com/Harshx02" class="btn-secondary">
-                    <i class="fab fa-github mr-2"></i>View All Projects
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's work together</p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-12">
-                <div class="space-y-8">
-                    <div class="contact-info">
-                        <h3 class="text-2xl font-bold mb-6">Let's Connect</h3>
-                        <p class="text-gray-400 mb-8">
-                            I'm always interested in hearing about new opportunities and exciting projects. 
-                            Whether you have a question or just want to say hi, feel free to reach out!
-                        </p>
-                        
-                        <div class="space-y-4">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>tiwariharsh2204@gmail.com</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+91 7404495514</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>India</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form-container">
-                    <form id="contact-form" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="form-group">
-                                <input type="text" id="name" name="name" required class="form-input" placeholder="Your Name">
-                                <label for="name" class="form-label">Name</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" id="email" name="email" required class="form-input" placeholder="Your Email">
-                                <label for="email" class="form-label">Email</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" required class="form-input" placeholder="Subject">
-                            <label for="subject" class="form-label">Subject</label>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="5" required class="form-input" placeholder="Your Message"></textarea>
-                            <label for="message" class="form-label">Message</label>
-                        </div>
-                        <button type="submit" class="btn-primary w-full">
-                            <i class="fas fa-paper-plane mr-2"></i>Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-950 py-8 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <p class="text-gray-400">
-                    © 2024 Harsh Tiwari. All rights reserved. Built with ❤️ using Flask, Tailwind CSS, and JavaScript.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsh Tiwari - Data Scientist Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body class="bg-black text-white font-inter overflow-x-hidden">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="logo-container">
-                    <a href="#home" class="text-2xl font-bold text-white hover:text-gray-300 transition-colors duration-300">
-                        <span class="animate-pulse">H</span>arsh<span class="animate-pulse">T</span>
-                    </a>
-                </div>
-                
-                <ul class="hidden md:flex space-x-8">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#certifications" class="nav-link">Certifications</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
@@ -521,8 +55,8 @@ enhanced readability.
             <div class="px-4 py-4 space-y-2">
                 <a href="#home" class="block py-2 text-white hover:text-gray-300">Home</a>
                 <a href="#about" class="block py-2 text-white hover:text-gray-300">About</a>
-                <a href="#projects" class="block py-2 text-white hover:text-gray-300">Projects</a>
                 <a href="#skills" class="block py-2 text-white hover:text-gray-300">Skills</a>
+                <a href="#projects" class="block py-2 text-white hover:text-gray-300">Projects</a>
                 <a href="#certifications" class="block py-2 text-white hover:text-gray-300">Certifications</a>
                 <a href="#contact" class="block py-2 text-white hover:text-gray-300">Contact</a>
             </div>
@@ -743,6 +277,113 @@ enhanced readability.
         </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Some of my recent work</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='images/mlproject.jpg') }}">
+                    </div>
+                    <br>
+                    <div class="project-content">
+                        <h3 class="text-xl font-semibold mb-3">Diabetes Dataset Analysis Using Cutting-Edge ML Models</h3>
+                        <p class="text-gray-400 mb-4">
+                                                  • Developed and implemented advanced machine learning models to analyze the diabetes dataset
+beyond exploratory analysis.
+• Engineered and optimized predictive models in R, including KNN, Decision Trees, SVM, ANN, and
+Random Forest, to enhance accuracy and performance.
+• Conducted comparative evaluations to identify the most effective model, leveraging data-driven
+insights for improved healthcare decision-making.
+  
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">R</span>
+                            <span class="tag">Machine Learning Models</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.linkedin.com/posts/harshh-tiwari_health-metrics-insights-diabetes-dataset-activity-7264249703293169664-e3AK?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD5vBXsB2XVH_aUaGzcCWXzb1gBy4X_GmQk" class="project-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/Harshx02?tab=repositories" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='images/tableauDashboard.png') }}">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="text-xl font-semibold mb-3">Data Science Job Salaries Dashboard</h3>
+                        <p class="text-gray-400 mb-4">
+                            • Designed and developed an interactive Tableau dashboard to visualize salary trends across various
+roles in the data science domain, including Data Analysts, Data Scientists, and Business Analysts.
+• Implemented salary segmentation based on experience levels (Entry-Level, Intermediate, and
+Senior) to provide clearer insights.
+• Utilized Tableau Prep for data cleaning,transformation, and formatting, ensuring accurate and
+structured data representation.
+
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Tableau Prep</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.linkedin.com/posts/harshh-tiwari_datascience-tableau-salaryinsights-activity-7263679131215683584-lWP5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD5vBXsB2XVH_aUaGzcCWXzb1gBy4X_GmQk" class="project-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/Harshx02?tab=repositories" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='images/qrImage.jpg') }}">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="text-xl font-semibold mb-3">QR-Code Generator</h3>
+                        <p class="text-gray-400 mb-4">
+                            • Built a Python tool to generate QR codes from user-provided URLs using the qrcode library.
+• Configured QR attributes such as error correction, box size, and custom color themes for
+enhanced readability.
+• Exported codes as high-quality .png images for seamless digital sharing and practical usage.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Qrcode</span>
+                            <span class="tag">Pillow</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="https://github.com/Harshx02/QrCodeGenerator" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://github.com/Harshx02" class="btn-secondary">
+                    <i class="fab fa-github mr-2"></i>View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Certifications Section -->
     <section id="certifications" class="py-20 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -893,113 +534,6 @@ enhanced readability.
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Some of my recent work</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="{{ url_for('static', filename='images/mlproject.jpg') }}">
-                    </div>
-                    <br>
-                    <div class="project-content">
-                        <h3 class="text-xl font-semibold mb-3">Diabetes Dataset Analysis Using Cutting-Edge ML Models</h3>
-                        <p class="text-gray-400 mb-4">
-                                                  • Developed and implemented advanced machine learning models to analyze the diabetes dataset
-beyond exploratory analysis.
-• Engineered and optimized predictive models in R, including KNN, Decision Trees, SVM, ANN, and
-Random Forest, to enhance accuracy and performance.
-• Conducted comparative evaluations to identify the most effective model, leveraging data-driven
-insights for improved healthcare decision-making.
-  
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">R</span>
-                            <span class="tag">Machine Learning Models</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.linkedin.com/posts/harshh-tiwari_health-metrics-insights-diabetes-dataset-activity-7264249703293169664-e3AK?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD5vBXsB2XVH_aUaGzcCWXzb1gBy4X_GmQk" class="project-link">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://github.com/Harshx02?tab=repositories" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="{{ url_for('static', filename='images/tableauDashboard.png') }}">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="text-xl font-semibold mb-3">Data Science Job Salaries Dashboard</h3>
-                        <p class="text-gray-400 mb-4">
-                            • Designed and developed an interactive Tableau dashboard to visualize salary trends across various
-roles in the data science domain, including Data Analysts, Data Scientists, and Business Analysts.
-• Implemented salary segmentation based on experience levels (Entry-Level, Intermediate, and
-Senior) to provide clearer insights.
-• Utilized Tableau Prep for data cleaning,transformation, and formatting, ensuring accurate and
-structured data representation.
-
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Tableau</span>
-                            <span class="tag">Tableau Prep</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.linkedin.com/posts/harshh-tiwari_datascience-tableau-salaryinsights-activity-7263679131215683584-lWP5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD5vBXsB2XVH_aUaGzcCWXzb1gBy4X_GmQk" class="project-link">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://github.com/Harshx02?tab=repositories" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="{{ url_for('static', filename='images/qrImage.jpg') }}">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="text-xl font-semibold mb-3">QR-Code Generator</h3>
-                        <p class="text-gray-400 mb-4">
-                            • Built a Python tool to generate QR codes from user-provided URLs using the qrcode library.
-• Configured QR attributes such as error correction, box size, and custom color themes for
-enhanced readability.
-• Exported codes as high-quality .png images for seamless digital sharing and practical usage.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Qrcode</span>
-                            <span class="tag">Pillow</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="https://github.com/Harshx02/QrCodeGenerator" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="https://github.com/Harshx02" class="btn-secondary">
-                    <i class="fab fa-github mr-2"></i>View All Projects
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1075,6 +609,6 @@ enhanced readability.
     </footer>
 
     <!-- Scripts -->
-    <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
